@@ -115,10 +115,10 @@
                 $Name = $_POST['Name'];
                 $Comment = $_POST['Comment'];
                 #Get old comments
-                $old = fopen("comments.txt", "r+t");
+                $old = fopen("comments6.txt", "r+t");
                 $old_comments = fread($old, 1024);
                 #Delete everything, write down new and old comments
-                $write = fopen("comments.txt", "w+");
+                $write = fopen("comments6.txt", "w+");
                 $string = "<b>" . $Name . "</b><br>" . $Comment . "<br>\n" . $old_comments;
                 fwrite($write, $string);
                 fclose($write);
@@ -126,7 +126,7 @@
             }
 
             #Read comments
-            $read = fopen("comments.txt", "r+t");
+            $read = fopen("comments6.txt", "r+t");
             echo "<br><br>Comments<hr>" . fread($read, 1024);
             fclose($read);
 
